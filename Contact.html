@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="style.css" rel="stylesheet">
+
+  <style>
+    #contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    /* Styling for the contact form section */
+    .contact-section {
+      background-color: whitesmoke;
+      /* Light gray background */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* Soft shadow effect */
+      max-width: 600px;
+      /* Limiting the width of the form */
+      padding: 40px;
+      margin: 200px;
+      /* Spacing around the form */
+    }
+
+    /* Center-align the headings in the contact form */
+    .contact-section h2,
+    .contact-section p {
+      text-align: center;
+      margin-bottom: 20px;
+      /* Add some space below headings */
+    }
+
+    /* Styling for form labels */
+    .contact-section form label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+      /* Add space below each label */
+    }
+
+    /* Styling for form input fields and textarea */
+    .contact-section form input[type="text"],
+    .contact-section form input[type="email"],
+    .contact-section form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      /* Add space between each input field */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    /* Styling for the textarea */
+    .contact-section form textarea {
+      height: 150px;
+      /* Set a fixed height for the textarea */
+      resize: vertical;
+      /* Allow vertical resizing */
+    }
+
+    /* Styling for the submit button */
+    .contact-section form input[type="submit"] {
+      background-color: #007bff;
+      /* Blue background color */
+      color: white;
+      /* White text color */
+      border: none;
+      /* Remove border */
+      padding: 15px 30px;
+      /* Padding inside the button */
+      border-radius: 5px;
+      /* Rounded corners */
+      cursor: pointer;
+      /* Show pointer cursor on hover */
+      font-size: 18px;
+      /* Font size */
+      transition: background-color 0.3s ease;
+      /* Smooth transition on hover */
+      display: inline-block;
+      /* Display as inline-block to adjust width */
+    }
+
+    /* Hover effect for the submit button */
+    .contact-section form input[type="submit"]:hover {
+      background-color: #0056b3;
+      /* Darker blue color on hover */
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Story.php">Story</a></li>
+              <li><a href="Memories.html">Memories</a></li>
+              <li><a href="Gallery.php">Gallery</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <p>This Website Is Maintained by the Burke and Moore families.</p>
+        <p>For Any Comments or Questions Please Contact Us.</p>
+
+        <div id="contact-container">
+            <div class="contact-section">
+              <form action="submit_contact_form.php" method="post">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="6" required></textarea> <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </main>
+  <footer>
+      <!-- Empty footer -->
+  </footer>
+</body>
+</html>

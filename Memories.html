@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Additional CSS for post styling */
+      .post {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 20px;
+          margin-bottom: 20px;
+          background-color: #cad2c5;
+          max-width: 600px; /* Set maximum width for the post box */
+      }
+
+        /* Styling for form input fields and textarea */
+        .post-section form input[type="text"],
+        .post-section form input[type="file"],
+        .post-section form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 0px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Story.php">Story</a></li>
+                <li><a href="Memories.html">Memories</a></li>
+                <li><a href="Gallery.php">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Share a Memory</h1>
+        <div id="forum-container">
+            <div class="post-section">
+                <form action="submit_post.php" method="post" enctype="multipart/form-data">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea><br>
+                    <label for="photo">Attach Photo:</label>
+                    <input type="file" id="photo" name="photo"><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <h2>Read about Daniel</h2>
+
+            <div class="posts">
+                <!-- Display posts here -->
+                <!-- Example post structure -->
+                <div class="post">
+                    <h3>Post Title</h3>
+                    <p>Posted by John Doe</p>
+                    <p>No info</p>
+                    <img src="example.jpg" alt="Example Image">
+                </div>
+                <!-- End example post -->
+            </div>
+        </div>
+    </main>
+
+  <footer>
+      <!-- Empty footer -->
+  </footer>
+</body>
+</html>
