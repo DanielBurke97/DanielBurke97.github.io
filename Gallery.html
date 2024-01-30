@@ -4,45 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
-  <link href="style.css" rel="stylesheet">
-    
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Story.html">Story</a></li>
+                <li><a href="Memories.html">Memories</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-      <nav>
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="Story.php">Story</a></li>
-              <li><a href="Memories.html">Memories</a></li>
-              <li><a href="Gallery.php">Gallery</a></li>
-              <li><a href="Contact.html">Contact</a></li>
-          </ul>
-      </nav>
-  </header>
-  
     <h1>Gallery</h1>
-    <div class="scrollable-container">
-        <div class="scrollable-gallery">
-            <?php
-            // Directory where images are stored
-            $imageDirectory = 'images/';
-
-            // Get all image files from the directory
-            $images = glob($imageDirectory . '*.{jpg,jpeg,png,gif,JPG}', GLOB_BRACE);
-
-            // Output each image in a grid
-            foreach ($images as $image) {
-                echo '<div class="gallery-item">';
-                echo '<img src="' . $image . '" alt="Gallery Image">';
-                echo '</div>';
-            }
-            ?>
-        </div>
+  
+  <div class="gallery-item">
+    <div class="gallery-item">
+        <img src="images/20210522_163459.jpg" alt="20210522_163459.jpg" onclick="openModal('images/20210522_163459.jpg')"><br>
     </div>
+    <div class="gallery-item">
+        <img src="images/20220424_174857.jpg" alt="20220424_174857.jpg" onclick="openModal('images/20220424_174857.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG-20181221-WA0012.jpg" alt="IMG-20181221-WA0012.jpg" onclick="openModal('images/IMG-20181221-WA0012.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG-20190206-WA0008.jpg" alt="IMG-20190206-WA0008.jpg" onclick="openModal('images/IMG-20190206-WA0008.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG-20220614-WA0016.jpg" alt="IMG-20220614-WA0016.jpg" onclick="openModal('images/IMG-20220614-WA0016.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_0388.jpg" alt="IMG_0388.jpg" onclick="openModal('images/IMG_0388.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_0394.jpg" alt="IMG_0394.jpg" onclick="openModal('images/IMG_0394.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190607_200552.jpg" alt="IMG_20190607_200552.jpg" onclick="openModal('images/IMG_20190607_200552.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190713_131023.jpg" alt="IMG_20190713_131023.jpg" onclick="openModal('images/IMG_20190713_131023.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190726_201956.jpg" alt="IMG_20190726_201956.jpg" onclick="openModal('images/IMG_20190726_201956.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190729_200526.jpg" alt="IMG_20190729_200526.jpg" onclick="openModal('images/IMG_20190729_200526.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190802_124133.jpg" alt="IMG_20190802_124133.jpg" onclick="openModal('images/IMG_20190802_124133.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190906_104359.jpg" alt="IMG_20190906_104359.jpg" onclick="openModal('images/IMG_20190906_104359.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190906_131231.jpg" alt="IMG_20190906_131231.jpg" onclick="openModal('images/IMG_20190906_131231.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20190906_144357.jpg" alt="IMG_20190906_144357.jpg" onclick="openModal('images/IMG_20190906_144357.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20200110_155613.jpg" alt="IMG_20200110_155613.jpg" onclick="openModal('images/IMG_20200110_155613.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20200129_202043.jpg" alt="IMG_20200129_202043.jpg" onclick="openModal('images/IMG_20200129_202043.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20200715_151740_277.jpg" alt="IMG_20200715_151740_277.jpg" onclick="openModal('images/IMG_20200715_151740_277.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20200905_143256.jpg" alt="IMG_20200905_143256.jpg" onclick="openModal('images/IMG_20200905_143256.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20210807_165234.jpg" alt="IMG_20210807_165234.jpg" onclick="openModal('images/IMG_20210807_165234.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20210809_143311.jpg" alt="IMG_20210809_143311.jpg" onclick="openModal('images/IMG_20210809_143311.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20211025_111811.jpg" alt="IMG_20211025_111811.jpg" onclick="openModal('images/IMG_20211025_111811.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220108_220538.jpg" alt="IMG_20220108_220538.jpg" onclick="openModal('images/IMG_20220108_220538.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220109_091228.jpg" alt="IMG_20220109_091228.jpg" onclick="openModal('images/IMG_20220109_091228.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220111_130817.jpg" alt="IMG_20220111_130817.jpg" onclick="openModal('images/IMG_20220111_130817.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220111_133304.jpg" alt="IMG_20220111_133304.jpg" onclick="openModal('images/IMG_20220111_133304.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220111_210932.jpg" alt="IMG_20220111_210932.jpg" onclick="openModal('images/IMG_20220111_210932.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220317_152152.jpg" alt="IMG_20220317_152152.jpg" onclick="openModal('images/IMG_20220317_152152.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220319_132641.jpg" alt="IMG_20220319_132641.jpg" onclick="openModal('images/IMG_20220319_132641.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_20220522_132241.jpg" alt="IMG_20220522_132241.jpg" onclick="openModal('images/IMG_20220522_132241.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_3544.jpg" alt="IMG_3544.jpg" onclick="openModal('images/IMG_3544.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_3575.jpg" alt="IMG_3575.jpg" onclick="openModal('images/IMG_3575.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_3932.jpg" alt="IMG_3932.jpg" onclick="openModal('images/IMG_3932.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_4588.jpg" alt="IMG_4588.jpg" onclick="openModal('images/IMG_4588.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_4912.jpg" alt="IMG_4912.jpg" onclick="openModal('images/IMG_4912.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_5545.jpg" alt="IMG_5545.jpg" onclick="openModal('images/IMG_5545.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_6129.jpg" alt="IMG_6129.jpg" onclick="openModal('images/IMG_6129.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_7084.jpg" alt="IMG_7084.jpg" onclick="openModal('images/IMG_7084.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_9950.jpg" alt="IMG_9950.jpg" onclick="openModal('images/IMG_9950.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/Screenshot_20200716-142342.jpg" alt="Screenshot_20200716-142342.jpg" onclick="openModal('images/Screenshot_20200716-142342.jpg')"><br>
+    </div>
+    <div class="gallery-item">
+        <img src="images/Screenshot_20220613-111006_Instagram.jpg" alt="Screenshot_20220613-111006_Instagram.jpg" onclick="openModal('images/Screenshot_20220613-111006_Instagram.jpg')"><br>
+    </div>
+
+ </div>
+     
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+      <span class="next" onclick="plusSlides(1)">&#10095;</span>
+      <img class="modal-content" id="modalImg">
+      <div id="caption"></div>
+  </div>
 
   <footer>
       <!-- Empty footer -->
   </footer>
-</body>
-</html>
+
+  <script src="script.js"></script> <!-- Add your JavaScript file -->
+  <script>
+      let slideIndex = 0; // Initialize slideIndex to 0
+
+      function openModal(imageSrc, index) {
+          slideIndex = index;
+          document.getElementById('modalImg').src = imageSrc;
+          document.getElementById('myModal').style.display = 'block';
+      }
+
+      function closeModal() {
+          document.getElementById('myModal').style.display = 'none';
+      }
+
+      function plusSlides(n) {
+          showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+          showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+          const slides = document.getElementsByClassName('modal-content');
+          if (n >= slides.length) slideIndex = 0; // Reset index to 0 if reached end
+          if (n < 0) slideIndex = slides.length - 1; // Set index to last if reached beginning
+          for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = 'none';
+          }
+          slides[slideIndex].style.display = 'block';
+      }
+  </script>
+  </body>
+  </html>
