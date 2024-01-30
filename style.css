@@ -24,10 +24,13 @@ a {
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  /* Adjust the margin as needed */
+
 }
 
 main {
@@ -173,7 +176,7 @@ img {
 
 
 
- 
+
 
   .textbox {
     width: 700px;
@@ -278,35 +281,92 @@ img {
   }
 
   /* CSS styles for the gallery grid */
-  .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-      gap: 10px; /* Gap between grid items */
-      padding: 20px;
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    /* 5 images wide */
+    grid-gap: 10px;
   }
 
-  .gallery img {
-      width: 100%; /* Ensure images fill their container */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 5px; /* Rounded corners for images */
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
-      transition: transform 0.2s ease; /* Smooth hover effect */
+  .gallery-item {
+    overflow: hidden;
   }
 
-  .gallery img:hover {
-      transform: scale(1.05); /* Enlarge image on hover */
+  .gallery-item img {
+    width: 100%;
+    height: auto;
   }
+
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+  }
+
+  .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 
   /* Styles for scrollable container */
   .scrollable-container {
-      overflow-x: auto; /* Horizontal scrolling */
-      white-space: nowrap; /* Prevent line breaks */
-      margin-bottom: 20px; /* Add some space at the bottom */
+    overflow-x: auto;
+    /* Horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    margin-bottom: 20px;
+    /* Add some space at the bottom */
   }
 
   /* Style for the container of the scrollable gallery */
   .scrollable-gallery {
-      display: flex;
+    display: flex;
   }
 
   .post-section {
@@ -344,18 +404,18 @@ img {
 
   /* Posts section styles */
 
-  
+
   .posts {
     display: grid;
     grid-gap: 20px;
   }
 
   .post {
-      border: 100px solid #ccc;
-      border-radius: 5px;
-      padding: 20px;
-      margin-bottom: 20px;
-      background-color: #f9f9f9;
+    border: 100px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
   }
 
   .post h3 {
@@ -373,22 +433,25 @@ img {
   }
 
   .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      text-decoration: none;
-      border: 2px solid #007bff; /* Add border */
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #007bff;
+    /* Add border */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
   }
 
   /* Button hover effect */
   .button:hover {
-      background-color: #0056b3;
-      border-color: #0056b3; /* Change border color on hover */
+    background-color: #0056b3;
+    border-color: #0056b3;
+    /* Change border color on hover */
   }
+
   .justified-text {
-      text-align: justify;
+    text-align: justify;
   }
 }
