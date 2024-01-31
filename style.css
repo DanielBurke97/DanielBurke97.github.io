@@ -2,16 +2,21 @@ html,
 body {
   padding: 0;
   margin: 0;
-
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: skyblue;
 }
 
+h1 {
+  text-align: center;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
 h2 {
   text-align: center;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 a {
@@ -30,22 +35,17 @@ footer {
   text-align: center;
   margin-top: 20px;
   /* Adjust the margin as needed */
-
 }
 
 main {
   min-height: 100vh;
-  padding: 4rem 2rem;
-  flex: 1;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: justify;
+  justify-content: center;
   align-items: center;
   font-family: 'Libre Franklin', sans-serif;
-
-
 }
-
 
 header {
   background-color: #333;
@@ -57,8 +57,6 @@ header {
 nav {
   display: inline-block;
 }
-
-
 
 ul {
   list-style-type: none;
@@ -77,13 +75,16 @@ a {
 }
 
 img {
+  max-width: 100%;
+  height: auto;
   padding: 20px;
   padding-bottom: 50px;
   /* Adjust the padding as needed */
 }
 
 .textbox {
-  width: 700px;
+  width: 90%;
+  max-width: 700px;
   padding: 20px;
   background-color: #e6ffff;
   border: 1px solid #ccc;
@@ -96,8 +97,6 @@ img {
   /* Adjust the font size as needed */
   text-align: center;
 }
-
-
 
 .title {
   margin: 0;
@@ -113,7 +112,7 @@ img {
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 2rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
   font-family: 'Libre Franklin', sans-serif;
@@ -129,15 +128,12 @@ img {
 }
 
 .grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  grid-gap: 20px;
 }
 
 .card {
-  margin: 1rem;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -145,7 +141,6 @@ img {
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
 }
 
 .card:hover,
@@ -167,175 +162,44 @@ img {
   line-height: 1.5;
 }
 
-@media (max-width: 600px) {
-  .grid {
+/* CSS styles for the gallery grid */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  /* 5 images wide */
+  grid-gap: 10px;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
     width: 100%;
-    flex-direction: column;
-  }
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
 
-
-
-
-
-
-  .textbox {
-    width: 700px;
-    padding: 20px;
-    background-color: #e6ffff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .textbox p {
-    font-size: 24px;
-    /* Adjust the font size as needed */
-    text-align: center;
-  }
-
-  #contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  /* Styling for the contact form section */
-  .contact-section {
-    background-color: white;
-    /* Light gray background */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Soft shadow effect */
-    max-width: 600px;
-    /* Limiting the width of the form */
-    padding: 40px;
-    margin: 20px;
-    /* Spacing around the form */
-  }
-
-  /* Center-align the headings in the contact form */
-  .contact-section h2,
-  .contact-section p {
-    text-align: center;
-    margin-bottom: 20px;
-    /* Add some space below headings */
-  }
-
-  /* Styling for form labels */
-  .contact-section form label {
+.modal-content {
+    margin: auto;
     display: block;
-    font-size: 18px;
-    margin-bottom: 10px;
-    /* Add space below each label */
-  }
+    max-width: 90%;
+    max-height: 90%;
+}
 
-  /* Styling for form input fields and textarea */
-  .contact-section form input[type="text"],
-  .contact-section form input[type="email"],
-  .contact-section form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    /* Add space between each input field */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-  }
-
-  /* Styling for the textarea */
-  .contact-section form textarea {
-    height: 150px;
-    /* Set a fixed height for the textarea */
-    resize: vertical;
-    /* Allow vertical resizing */
-  }
-
-  /* Styling for the submit button */
-  .contact-section form input[type="submit"] {
-    background-color: #007bff;
-    /* Blue background color */
-    color: white;
-    /* White text color */
-    border: none;
-    /* Remove border */
-    padding: 15px 30px;
-    /* Padding inside the button */
-    border-radius: 5px;
-    /* Rounded corners */
-    cursor: pointer;
-    /* Show pointer cursor on hover */
-    font-size: 18px;
-    /* Font size */
-    transition: background-color 0.3s ease;
-    /* Smooth transition on hover */
-    display: inline-block;
-    /* Display as inline-block to adjust width */
-  }
-
-  /* Hover effect for the submit button */
-  .contact-section form input[type="submit"]:hover {
-    background-color: #0056b3;
-    /* Darker blue color on hover */
-  }
-
-  /* CSS styles for the gallery grid */
-  .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-    /* 5 images wide */
-    grid-gap: 10px;
-  }
-
-  .gallery-item {
-    overflow: hidden;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-  }
-
-  .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 50px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.9);
-  }
-
-  .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 90%;
-  }
-
-  .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-  }
-
-  .close:hover,
-  .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
-  }
-
-  .close {
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -344,114 +208,134 @@ img {
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 
-  /* Styles for scrollable container */
-  .scrollable-container {
-    overflow-x: auto;
-    /* Horizontal scrolling */
-    white-space: nowrap;
-    /* Prevent line breaks */
-    margin-bottom: 20px;
-    /* Add some space at the bottom */
-  }
+/* Styles for scrollable container */
+.scrollable-container {
+  overflow-x: auto;
+  /* Horizontal scrolling */
+  white-space: nowrap;
+  /* Prevent line breaks */
+  margin-bottom: 20px;
+  /* Add some space at the bottom */
+}
 
-  /* Style for the container of the scrollable gallery */
-  .scrollable-gallery {
-    display: flex;
-  }
-
-  .post-section {
-    margin-bottom: 20px;
-  }
-
-  .post-section h2 {
-    margin-bottom: 10px;
-  }
-
-  .post-section form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  .post-section form input[type="text"],
-  .post-section form textarea,
-  .post-section form input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-
-  .post-section form input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  /* Posts section styles */
+/* Style for the container of the scrollable gallery */
+.scrollable-gallery {
+  display: flex;
+}
 
 
-  .posts {
+.post-section {
+  margin-bottom: 20px;
+}
+
+.post-section h2 {
+  margin-bottom: 10px;
+}
+
+.post-section form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.post-section form input[type="text"],
+.post-section form textarea,
+.post-section form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.post-section form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Posts section styles */
+
+.posts {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.post {
+  border: 100px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.post h3 {
+  margin-top: 0;
+}
+
+.post p {
+  margin-bottom: 10px;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: background-color 0.
+}
+
+.gallery-container {
     display: grid;
-    grid-gap: 20px;
-  }
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
 
-  .post {
-    border: 100px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-  }
+.gallery-item {
+    overflow: hidden;
+}
 
-  .post h3 {
-    margin-top: 0;
-  }
-
-  .post p {
-    margin-bottom: 10px;
-  }
-
-  .post img {
-    max-width: 100%;
+.gallery-item img {
+    width: 100%;
     height: auto;
-    border-radius: 5px;
-  }
-
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #007bff;
-    /* Add border */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  /* Button hover effect */
-  .button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    /* Change border color on hover */
-  }
-
-  .justified-text {
-    text-align: justify;
-  }
 }
