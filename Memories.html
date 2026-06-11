@@ -1,20 +1,166 @@
-<!--
-  Replace the entire <form> section in your Memories.html with this code.
-  Make sure to replace YOUR_FORMSPREE_ID_HERE with your actual form ID!
--->
-<form action="https://formspree.io/f/mvznwzzp" method="POST" enctype="multipart/form-data">
-    
-    <!-- This field is required by Formspree -->
-    <input type="hidden" name="form-name" value="Memory">
-    
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="style.css">
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="6" required></textarea>
+    <style>
+        /* Additional CSS for post styling */
+        .post {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #cad2c5;
+            max-width: 600px;
+        }
 
-    <label for="photo">Attach Photo:</label>
-    <input type="file" id="photo" name="photo" accept="image/*">
+        /* Styling for form input fields and textarea */
+        .post-section form input[type="text"],
+        .post-section form input[type="file"],
+        .post-section form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
 
-    <input type="submit" value="Submit Memory">
-</form>
+        .post-section form input[type="submit"] {
+            background-color: #28666e;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .post-section form input[type="submit"]:hover {
+            background-color: #1e4a50;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+        }
+
+        .posts-container {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .no-posts {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Story.html">Story</a></li>
+                <li><a href="Memories.html">Memories</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Share a Memory</h1>
+        
+        <!-- Status message area -->
+        <div id="status-message"></div>
+        
+        <div id="forum-container">
+            <div class="post-section">
+                <!-- REPLACE YOUR_FORMSPREE_ID_HERE with your actual Formspree form ID -->
+                <form action="https://formspree.io/f/mvznwzzp" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" value="New Memory Shared on Daniel Burke Memorial Website">
+                    <input type="hidden" name="_next" value="https://DanielBurke97.github.io/YOUR_REPO_NAME/Memories.html?success=true">
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    
+                    <label for="photo">Attach Photo (optional):</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                    
+                    <input type="submit" value="Submit Memory">
+                </form>
+            </div>
+
+            <div class="posts-container">
+                <h2>Memories Shared by Visitors</h2>
+                <div class="posts" id="posts-container">
+                    <!-- Example memories - replace these with your actual memories -->
+                    <div class="post">
+                        <h3>Sarah Johnson</h3>
+                        <p><small>Posted: March 15, 2024</small></p>
+                        <p>Daniel was such a bright light. I remember his kindness and wonderful sense of humor. He will be deeply missed.</p>
+                    </div>
+                    <div class="post">
+                        <h3>Michael O'Brien</h3>
+                        <p><small>Posted: March 10, 2024</small></p>
+                        <p>A true gentleman. Daniel always had time for everyone. Rest in peace.</p>
+                    </div>
+                    <!-- End example memories -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Empty footer -->
+    </footer>
+
+    <script>
+        // Display status message from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('success');
+        
+        if (status === 'true') {
+            const statusDiv = document.getElementById('status-message');
+            statusDiv.innerHTML = '<div class="success-message">✓ Thank you for sharing your memory! It has been sent to the family.</div>';
+            
+            // Scroll to show the message
+            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Remove the success parameter from URL without reloading
+            const newUrl = window.location.pathname;
+            window.history.replaceState({}, document.title, newUrl);
+        }
+        
+        // Optional: Load memories from a simple JSON file if you want to display them dynamically
+        // For now, the example memories are shown above
+    </script>
+</body>
+</html>
